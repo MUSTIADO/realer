@@ -1,0 +1,39 @@
+[
+    {
+      "name": "Lumo Residence",
+      "price": "100,000",
+      "detail": " James Gichuru Road, Greatwall Street, Lavington ",
+      "image": "./r1.jpeg"
+    },
+    {
+      "name": "Leo Springs",
+      "price": "94,780",
+      "detail": " Windy Ridge, Street No.215, Karen",
+      "image": "./r2.jpeg"
+    },
+    {
+      "name": "High Tower",
+      "price": "89,987",
+      "detail": " Runda Grove, Royal street Block 2, Runda",
+      "image": "./r3.jpeg"
+    },
+    {
+      "name": "Brookshade Villas",
+      "price": "68,000",
+      "detail": " Limuru Road, Garden City Street, Runda",
+      "image": "./r4.jpeg"
+    },
+    {
+      "name": "Green-fields",
+      "price": "76,903",
+      "detail": " Gitanga Road, Hiltop Street, No.215, Lavington",
+      "image": "./r5.jpeg"
+    },
+    {
+      "name": "Paradise Gardens",
+      "price": "35,080",
+      "detail": " Kyuna Crescent, Block A7, heighty Street,Kitusuru",
+      "image": "./r6.jpeg"
+    }
+  ]
+  
