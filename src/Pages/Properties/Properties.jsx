@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Properties.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { useNavigate, Link } from "react-router-dom"; // Import Link for navigation
+import { useNavigate, Link } from "react-router-dom";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // useNavigate hook for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,8 +33,11 @@ const Properties = () => {
   if (properties.length === 0) return <p>No properties found.</p>;
 
   return (
-    <div className="container">
-      <h1>Properties</h1>
+    <div className="wrapper">
+      <div className="flexColCenter paddings innerWidth properties-container">
+        <SearchBar />
+      </div>
+      <h1> Stellar Properties</h1>
       <div className="row">
         {properties.map(property => (
           <div key={property.id} className="col-md-4 mb-3">
@@ -47,29 +50,23 @@ const Properties = () => {
               <div className="card-body">
                 <h5 className="card-title">{property.name}</h5>
                 <p><strong>Location:</strong> {property.location}</p>
-                {/* <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
+                {/* Uncomment the following lines to include price and button */}
+                {/* 
+                <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
                 <button
                   onClick={() => handleBuyClick(property)}
                   className="btn btn-primary"
                 >
                   Buy Property
-                </button> */}
+                </button> 
+                */}
               </div>
             </div>
           </div>
         ))}
       </div>
-      </div>
-
-  // return (
-  //   <div className="wrapper">
-  //     <div className="flexColCenter paddings innerWidth properties-container">
-  //       <SearchBar  />
-  //       </div>
-
-  //   </div>
-  ); 
-  
+    </div>
+  );
 };
 
 export default Properties;
