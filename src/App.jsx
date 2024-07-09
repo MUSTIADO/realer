@@ -6,6 +6,7 @@ import Layout from "./components/Layout/Layout";
 import Properties from './Pages/Properties/Properties';
 import Value from './Pages/Value/Value';
 
+
 function App() {
   
   return (

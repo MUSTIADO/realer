@@ -29,8 +29,8 @@ const Header = () => {
             style={getMenuStyles(menuOpened)}
           >
             <NavLink to="/properties">Properties</NavLink>
-            <NavLink to="/value">Value</NavLink>
-            
+            <NavLink to="/value">Our Value</NavLink>
+
               <a href="mailto:nyabokeann99@gmail.com">Contact</a>
            {/* login button */}
            {/* {!isAuthenticated ? ( */}
