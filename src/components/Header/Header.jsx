@@ -5,7 +5,6 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { getMenuStyles } from "../../utils/common";
 import useHeaderColor from "../../hooks/useHeaderColor";
 import OutsideClickHandler from "react-outside-click-handler";
-import Properties from '../../Pages/Properties/Properties';
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -30,6 +29,7 @@ const Header = () => {
             style={getMenuStyles(menuOpened)}
           >
             <NavLink to="/properties">Properties</NavLink>
+            <NavLink to="/value">Value</NavLink>
             
               <a href="mailto:nyabokeann99@gmail.com">Contact</a>
            {/* login button */}
