@@ -6,6 +6,7 @@
   h1 {
     text-align: center;
     margin-bottom: 40px;
+    color: #071739;
   }
   
   .properties-container {
@@ -43,8 +44,8 @@
     transition: transform 0.2s;
     margin-bottom: 20px;
     background-color: #fff;
-    width: 100%; /* Ensures cards take up the full width of the column */
-    max-width: 300px; /* Set a maximum width for all cards */
+    width: 100%; 
+    max-width: 300px; 
   }
   
   .card:hover {
@@ -61,7 +62,7 @@
   
   .card-body {
     padding: 15px;
-    height: 150px; /* Fixed height for card body to ensure uniform size */
+    height: 150px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -74,7 +75,7 @@
   
   .card p {
     margin: 10px 0;
-    flex-grow: 1; /* Allows the paragraph to take up available space */
+    flex-grow: 1; 
   }
   
   .btn-primary {
@@ -89,12 +90,12 @@
     background-color: #0056b3;
   }
   
-  /* Ensure a maximum of 4 properties per row */
+  
   .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%;
     display: flex;
-    justify-content: center; /* Center the cards within the column */
+    justify-content: center; 
   }
   
   @media (max-width: 992px) {

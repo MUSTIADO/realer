@@ -49,17 +49,15 @@ const Properties = () => {
               />
               <div className="card-body">
                 <h5 className="card-title">{property.name}</h5>
-                <p><strong>Location:</strong> {property.location}</p>
-                {/* Uncomment the following lines to include price and button */}
-                {/* 
+                <p><strong>Location:</strong> {property.location}</p> 
                 <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
                 <button
-                  onClick={() => handleBuyClick(property)}
+                  // onClick={() => handleBuyClick(property)}
                   className="btn btn-primary"
                 >
                   Buy Property
                 </button> 
-                */}
+                
               </div>
             </div>
           </div>
