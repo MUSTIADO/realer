@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Payment.css'; // Import your Payment.css stylesheet
 
-const Payment = ({ propertyId }) => { // Adjust props as needed
+const Payment = ({ propertyId }) => {
   const [paymentMethod, setPaymentMethod] = useState('visa'); // Default payment method
   const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
@@ -15,11 +15,47 @@ const Payment = ({ propertyId }) => { // Adjust props as needed
     event.preventDefault();
     try {
       setProcessing(true);
-      // Simulate payment processing (replace with actual payment logic)
-      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate 2 second delay
 
-      // Assuming payment succeeds in this example
-      console.log('Payment successful!');
+      // Prepare data based on payment method
+      let requestData = {};
+      if (paymentMethod === 'visa') {
+        // Payment via Visa card logic (not shown for brevity)
+        // Implement actual payment processing logic here if required
+      } else if (paymentMethod === 'mpesa') {
+        // Payment via M-Pesa
+        requestData = {
+          amount: '100', // Adjust with actual amount
+          currency: 'KES', // Adjust with actual currency
+          phone: phone,
+        };
+      } else if (paymentMethod === 'paypal') {
+        // Payment via PayPal logic (not shown for brevity)
+        // Implement actual payment processing logic here if required
+      }
+
+      // Make API call to backend to process payment
+      const response = await fetch('http://localhost:5000/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Payment failed: ${response.status} - ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Payment successful:', data);
+
+      // Reset form fields after successful payment
+      setCardNumber('');
+      setExpiryDate('');
+      setCvv('');
+      setPhone('');
+      setPaypalEmail('');
+      setError(null); // Clear any previous errors
     } catch (error) {
       setError('Payment failed. Please try again.');
     } finally {

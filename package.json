@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "esri-leaflet-geocoder": "^3.1.4",
+    "formik": "^2.4.6",
     "framer-motion": "^11.2.13",
     "leaflet": "^1.9.4",
     "millify": "^6.1.0",
@@ -30,7 +31,8 @@
     "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
     "swiper": "^11.1.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

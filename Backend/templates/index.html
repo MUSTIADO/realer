@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listing</title>
+</head>
+<body>
+    <h1>Property Listing</h1>
+    <div id="properties"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to fetch properties data from Flask endpoint
+            function fetchProperties() {
+                $.ajax({
+                    url: '/properties',
+                    method: 'GET',
+                    success: function(data) {
+                        displayProperties(data);
+                    },
+                    error: function(err) {
+                        console.error('Error fetching properties:', err);
+                    }
+                });
+            }
+
+            // Function to display properties data
+            function displayProperties(properties) {
+                var propertiesDiv = $('#properties');
+                properties.forEach(function(property) {
+                    var propertyDiv = $('<div class="property"></div>');
+
+                    // Display property details
+                    propertyDiv.append('<h2>' + property.name + '</h2>');
+                    propertyDiv.append('<p>Location: ' + property.Location + '</p>');
+                    propertyDiv.append('<p>Address: ' + property.address + '</p>');
+                    propertyDiv.append('<p>Price: $' + property.price + '</p>');
+
+                    // Display property image
+                    var imageUrl = '/images/' + property.imageUrl;
+                    propertyDiv.append('<img src="' + imageUrl + '" alt="' + property.name + '">');
+
+                    propertiesDiv.append(propertyDiv);
+                });
+            }
+
+            // Initial fetch of properties on page load
+            fetchProperties();
+        });
+    </script>
+</body>
+</html>
