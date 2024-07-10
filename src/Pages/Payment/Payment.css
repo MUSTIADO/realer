@@ -1,142 +1,99 @@
-/* Payment.css */
-
+/* Container for payment form */
 .container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .alert {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-  }
-  
-  .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .col-md-4 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .col-md-8 {
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .list-group {
-    margin-bottom: 20px;
-  }
-  
-  .list-group-item {
-    cursor: pointer;
-  }
-  
-  .list-group-item.active {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: #fff;
-  }
-  
+  /* Form group */
   .form-group {
     margin-bottom: 20px;
   }
   
-  label {
+  .form-group label {
     font-weight: bold;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group-addon {
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-    margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    text-align: center;
-    white-space: nowrap;
-    background-image: none;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
+    display: block;
+    margin-bottom: 5px;
   }
   
   .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Payment method selection */
+  .payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-method {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .payment-method.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  .payment-method:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .payment-method img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  /* Submit button */
+  .btn-primary {
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-  }
-  
-  .btn {
-    display: inline-block;
-    font-weight: 400;
-    color: #212529;
+    padding: 10px;
+    font-size: 18px;
     text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-    transition: color .15s;
-  }
-  
-  .btn-primary {
     color: #fff;
     background-color: #007bff;
-    border-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
   .btn-primary:hover {
-    color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #0056b3;
   }
   
-  .btn-primary:disabled {
-    background-color: #007bff;
-    border-color: #007bff;
-    opacity: 0.65;
-    pointer-events: none;
+  /* Error message */
+  .error-message {
+    margin-top: 10px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  /* Success message */
+  .success-message {
+    margin-top: 10px;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    padding: 10px;
   }
   
