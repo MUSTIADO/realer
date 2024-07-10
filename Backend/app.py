@@ -11,15 +11,23 @@ CORS(app)  # Enable CORS for all routes
 
 # Example data (replace with your data storage logic)
 properties = [
-    {'id': 1, 'name': 'r1', 'location': 'MOMBASA', 'imageUrl': 'r1.jpeg', 'price': 250000},
-    {'id': 2, 'name': 'r2', 'location': 'Kenya', 'imageUrl': 'r2.jpeg', 'price': 350000},
-    {'id': 3, 'name': 'r3', 'location': 'KAREN, NAIROBI', 'imageUrl': 'r3.jpeg', 'price': 450000},
-    {'id': 4, 'name': 'r7', 'location': 'City D', 'imageUrl': 'r7.jpeg', 'price': 550000},
-    {'id': 5, 'name': 'r8', 'location': 'City E', 'imageUrl': 'r8.jpeg', 'price': 650000},
-    {'id': 6, 'name': 'cont', 'location': 'KONZA CITY', 'imageUrl': 'valuee.jpeg', 'price': 750000},
-    {'id': 7, 'name': 'hero', 'location': 'City D', 'imageUrl': 'contactt.jpeg', 'price': 550000},
-    {'id': 8, 'name': 'va', 'location': 'City E', 'imageUrl': 'value.jpeg', 'price': 650000},
-    {'id': 9, 'name': 'val', 'location': 'KONZA CITY', 'imageUrl': 'rr.jpeg', 'price': 750000}
+    {'id': 1, 'name': 'Lumo Residence', 'Location':'Muthaiga', 'address': 'MOMBASA', 'imageUrl': 'r1.jpeg', 'price': 250000},
+    {'id': 2, 'name': 'Green-fields', 'Location':'Thome','address': 'Kenya', 'imageUrl': 'r2.jpeg', 'price': 350000},
+    {'id': 3, 'name': 'Brookshade Villas', 'Location':'Gigiri','address': 'KAREN, NAIROBI', 'imageUrl': 'r3.jpeg', 'price': 450000},
+    {'id': 4, 'name': 'Leo Springs', 'Location':'Karen','address': 'City D', 'imageUrl': 'r7.jpeg', 'price': 550000},
+    {'id': 5, 'name': 'High Tower', 'Location':'Kilimani','address': 'City E', 'imageUrl': 'r8.jpeg', 'price': 650000},
+    {'id': 6, 'name': 'Avalon Heights','Location':'Runda', 'address': 'KONZA CITY', 'imageUrl': 'valuee.jpeg', 'price': 750000},
+    {'id': 7, 'name': 'PerfectPads', 'Location':'Kileleshwa','address': 'City D', 'imageUrl': 'contactt.jpeg', 'price': 550000},
+    {'id': 8, 'name': 'Apex Homes', 'Location':'Thome','address': 'Nyari', 'imageUrl': 'value.jpeg', 'price': 650000},
+    {'id': 9, 'name': 'Verdant Homes', 'Location':'Rossyln','address': 'KONZA CITY', 'imageUrl': 'rr.jpeg', 'price': 750000},
+    {'id': 10, 'name': 'Oasis', 'Location':'Ridgeways', 'address': 'KAREN, NAIROBI', 'imageUrl': 'b1.jpeg', 'price': 450000},
+    {'id': 11, 'name': 'Harmony Heights', 'Location':'Kitisuru', 'address': 'City D', 'imageUrl': 'b2.jpeg', 'price': 550000},
+    {'id': 12, 'name': 'Evergreen Homes', 'Location':'Spring Valley', 'address': 'City E', 'imageUrl': 'b3.jpeg', 'price': 650000},
+    {'id': 13, 'name': 'Nova Nook', 'Location':'Karen', 'address': 'KONZA CITY', 'imageUrl': 'b4.jpeg', 'price': 750000},
+    {'id': 14, 'name': 'Opulent Suites', 'Location':'Runda', 'address': 'City D', 'imageUrl': 'b5.jpeg', 'price': 550000},
+    {'id': 15, 'name': 'EcoUrban Living', 'Location':'Rossyln', 'address': 'City E', 'imageUrl': 'b6.jpeg', 'price': 650000},
+    {'id': 16, 'name': 'Serenity Gardens', 'Location':'Muthaiga', 'address': 'KONZA CITY', 'imageUrl': 'b7.jpeg', 'price': 750000}
+
 
 ]
 

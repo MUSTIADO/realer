@@ -66,7 +66,7 @@ const Properties = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{property.name}</h5>
-                  <p><strong>Location:</strong> {property.location}</p>
+                  <p><strong>Location:</strong> {property.Location}</p>
                   <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
                   <FavoriteButton propertyId={property.id} />
                 </div>
