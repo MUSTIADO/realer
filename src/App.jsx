@@ -6,6 +6,8 @@ import Layout from "./components/Layout/Layout";
 import Properties from './Pages/Properties/Properties';
 import Value from './Pages/Value/Value';
 import Property from "./Pages/Property/Property";
+import Payment from "./Pages/Payment/Payment"; // Import Payment component
+
 
 function App() {
   
@@ -19,6 +21,8 @@ function App() {
       <Route path="/properties" element={<Properties/>} />
       <Route path="/property/:id" element={<Property/>} />
       <Route path="/value" element={<Value/>} />
+      <Route path="/payment/:id" element={<Payment />} /> {/* Payment page */}
+
      </Route>
     </Routes>
     </Suspense>
