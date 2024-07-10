@@ -5,11 +5,12 @@ import { useNavigate, Link } from "react-router-dom";
 import FavoriteButton from "../../components/Favorites/Favorites";
 import { MdFavoriteBorder } from "react-icons/md";
 
-
 const Properties = () => {
   const [properties, setProperties] = useState([]);
+  const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filter, setFilter] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Properties = () => {
         }
         const propertyData = await response.json();
         setProperties(propertyData);
+        setFilteredProperties(propertyData);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -31,18 +33,29 @@ const Properties = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const lowerCaseQuery = filter.toLowerCase();
+    const filtered = properties.filter(property =>
+      property.name?.toLowerCase().includes(lowerCaseQuery) ||
+      property.location?.toLowerCase().includes(lowerCaseQuery) ||
+      property.city?.toLowerCase().includes(lowerCaseQuery) ||
+      property.country?.toLowerCase().includes(lowerCaseQuery)
+    );
+    setFilteredProperties(filtered);
+  }, [filter, properties]);
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
-  if (properties.length === 0) return <p>No properties found.</p>;
+  if (filteredProperties.length === 0) return <p>No properties found.</p>;
 
   return (
     <div className="wrapper">
       <div className="flexColCenter paddings innerWidth properties-container">
-        <SearchBar />
+        <SearchBar filter={filter} setFilter={setFilter} />
       </div>
-      <h1> Stellar Properties</h1>
+      <h1>Stellar Properties</h1>
       <div className="row">
-        {properties.map(property => (
+        {filteredProperties.map(property => (
           <div key={property.id} className="col-md-4 mb-3">
             <Link to={`/property/${property.id}`} className="card-link">
               <div className="card">
