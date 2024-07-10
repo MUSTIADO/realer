@@ -15,7 +15,7 @@
   .properties-container .search-bar {
     width: clamp(12rem, 100%, 28rem);
     border-radius: 30px;
-    border: 1px solid rgba(228, 76, 76, 0.374);
+    border: 1px solid rgba(120, 120, 120, 0.374);
     flex-wrap: nowrap;
   }
   

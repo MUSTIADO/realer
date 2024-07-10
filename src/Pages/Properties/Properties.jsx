@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Properties.css";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useNavigate, Link } from "react-router-dom";
+import FavoriteButton from "../../components/Favorites/Favorites";
+import { MdFavoriteBorder } from "react-icons/md";
+
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
@@ -41,25 +44,21 @@ const Properties = () => {
       <div className="row">
         {properties.map(property => (
           <div key={property.id} className="col-md-4 mb-3">
-            <div className="card">
-              <img
-                src={`http://localhost:5000/images/${property.imageUrl}`}
-                className="card-img-top"
-                alt={property.name}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{property.name}</h5>
-                <p><strong>Location:</strong> {property.location}</p> 
-                <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
-                <button
-                  // onClick={() => handleBuyClick(property)}
-                  className="btn btn-primary"
-                >
-                  Buy Property
-                </button> 
-                
+            <Link to={`/property/${property.id}`} className="card-link">
+              <div className="card">
+                <img
+                  src={`http://localhost:5000/images/${property.imageUrl}`}
+                  className="card-img-top"
+                  alt={property.name}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{property.name}</h5>
+                  <p><strong>Location:</strong> {property.location}</p>
+                  <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
+                  <FavoriteButton propertyId={property.id} />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
