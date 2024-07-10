@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import './Property.css'
+import './Property.css';
 import Map from '../../components/Map/Map';
+import { FaShower } from 'react-icons/fa';
+import { AiTwotoneCar } from 'react-icons/ai';
+import { MdMeetingRoom, MdLocationPin } from 'react-icons/md';
 
 const Property = () => {
   const { id } = useParams();
@@ -37,15 +40,55 @@ const Property = () => {
       <h1>{property.name}</h1>
       <div className="flexCenter property-container">
         <img
-          src={`http://localhost:5000/images/${property.imageUrl}`} // Adjust path as per your API response
+          src={`http://localhost:5000/images/${property.imageUrl}`}
           className="card-img-top"
           alt={property.name}
         />
-        <div className=" flexCenter property-details">
-            <div className="flexcolstart left"> 
-          <h5 className="card-title">{property.name}</h5>
-          <p><strong>Location:</strong> {property.location}</p>
-          <p><strong>Price:</strong> ${property.price.toLocaleString()}</p>
+
+        <div className="flexCenter property-details">
+          {/* left */}
+          <div className="flexColStart left">
+            {/* head */}
+            <div className="flexStart head">
+              <span className="primaryText">{property.title}</span> {/* Changed data to property */}
+              <span className="orangeText" style={{ fontSize: '1.5rem' }}>
+                $ {property.price}
+              </span>
+            </div>
+
+            {/* facilities */}
+            <div className="flexStart facilities">
+              {/* bathrooms */}
+              <div className="flexStart facility">
+                <FaShower size={20} color="#1F3E72" />
+                <span>{property.facilities?.bathrooms} Bathrooms</span> {/* Added safe navigation */}
+              </div>
+
+              {/* parkings */}
+              <div className="flexStart facility">
+                <AiTwotoneCar size={20} color="#1F3E72" />
+                <span>{property.facilities?.parkings} Parking</span> {/* Added safe navigation */}
+              </div>
+
+              {/* rooms */}
+              <div className="flexStart facility">
+                <MdMeetingRoom size={20} color="#1F3E72" />
+                <span>{property.facilities?.bedrooms} Room/s</span> {/* Added safe navigation */}
+              </div>
+            </div>
+
+            {/* description */}
+            <span className="secondaryText" style={{ textAlign: 'justify' }}>
+              {property.description}
+            </span>
+
+            {/* address */}
+            <div className="flexStart" style={{ gap: '1rem', marginTop: '1rem' }}>
+              <MdLocationPin size={25} />
+              <span className="secondaryText">
+                {property.address} {property.city} {property.country}
+              </span>
+            </div>
           </div>
 
           {/* right side */}
@@ -56,7 +99,6 @@ const Property = () => {
               country={property.country}
             />
           </div>
-
         </div>
       </div>
     </div>
